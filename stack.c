@@ -20,8 +20,8 @@ void init(stack *s){
 }
 
 void push(stack *s, void *val){
-	void *nn;
-	nn=malloc(sizeof(node));
+	Node *nn;
+	nn=malloc(sizeof(Node));
 	nn->val=val;
 	nn->next=s->top;
 	s->top=nn;
