@@ -14,7 +14,6 @@ typedef struct{
 
 */
 
-// initialise the stack top pointer
 void init(stack *s){
 	s->top=NULL;
 	return;
