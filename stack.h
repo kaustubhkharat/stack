@@ -10,9 +10,9 @@ typedef struct{
 	Node *top;
 }stack;
 
-void init(stack *s);
-void push(stack *s, void *val);
-void *pop(stack *s);
-void *peek(stack s);
+void init(stack *s);//initialise stack pointer
+void push(stack *s, void *val);//push a value in to stack
+void *pop(stack *s);//pop a value out of the stack
+void *peek(stack s);//see the top of the stack of the stack without removing it
 
 #endif
