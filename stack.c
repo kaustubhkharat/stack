@@ -14,6 +14,7 @@ typedef struct{
 
 */
 
+// initialise the stack top pointer
 void init(stack *s){
 	s->top=NULL;
 	return;
@@ -21,7 +22,8 @@ void init(stack *s){
 
 void push(stack *s, void *val){
 	Node *nn;
-	nn=malloc(sizeof(Node));
+	nn=(Node*)malloc(sizeof(Node));
+	if (nn==NULL) return; // malloc failed
 	nn->val=val;
 	nn->next=s->top;
 	s->top=nn;
@@ -29,7 +31,7 @@ void push(stack *s, void *val){
 }
 
 void *pop(stack *s){
-	if (s->top==NULL) return NULL;
+	if (s->top==NULL) return NULL;//empty stack returns NULL
 	Node *p;
 	void *val;
 	p=s->top;
@@ -40,6 +42,6 @@ void *pop(stack *s){
 }
 
 void *peek(stack s){
-	if (s.top==NULL) return NULL;
+	if (s.top==NULL) return NULL;// empty stack returns NULL
 	return s.top->val;
 }
